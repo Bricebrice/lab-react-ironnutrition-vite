@@ -2,7 +2,7 @@
 import "./FoodBox.css";
 
 function FoodBox({ food, clickToDelete }) {
-  console.log("one food", food);
+  // console.log("one food", food);
   return (
     <div className="foodBox">
       <p>{food.name}</p>
