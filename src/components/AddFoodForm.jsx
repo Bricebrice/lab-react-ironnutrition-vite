@@ -2,6 +2,8 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
+import { Divider, Input, Button, Form } from "antd";
+
 function AddFoodForm(props) {
   // Declare variable states
   const [name, setName] = useState("");
@@ -35,51 +37,50 @@ function AddFoodForm(props) {
   };
 
   return (
-    <div className="AddFoodForm">
-      <h1>Add Food Entry</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
+    <div>
+      <Form onSubmit={handleSubmit}>
+        <Divider>Add Food Entry</Divider>
+
+        <Form.Item label="Name">
+          <Input
             type="text"
             id="name"
             name="name"
             value={name}
             onChange={handleNameInput}
           />
-        </div>
-        <div>
-          <label htmlFor="image">Image:</label>
-          <input
+        </Form.Item>
+        <Form.Item label="Image">
+          <Input
             type="text"
             id="image"
             name="image"
             value={image}
             onChange={handleImageInput}
           />
-        </div>
-        <div>
-          <label htmlFor="calories">Calories:</label>
-          <input
+        </Form.Item>
+        <Form.Item label="Calories">
+          <Input
             type="number"
             id="calories"
             name="calories"
             value={calories}
             onChange={handleCaloriesInput}
           />
-        </div>
-        <div>
-          <label htmlFor="servings">Servings:</label>
-          <input
+        </Form.Item>
+        <Form.Item label="Servings">
+          <Input
             type="number"
             id="servings"
             name="servings"
             value={servings}
             onChange={handleServingsInput}
           />
-        </div>
-        <button type="submit">Create</button>
-      </form>
+        </Form.Item>
+        <Button type="default" htmlType="submit">
+          Create
+        </Button>
+      </Form>
     </div>
   );
 }

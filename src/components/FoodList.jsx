@@ -4,9 +4,11 @@ import { useState } from "react";
 import AddFoodForm from "./AddFoodForm";
 import FoodBox from "./FoodBox";
 
+import { Divider } from "antd";
+
 function FoodList() {
   const [foods, setFoods] = useState(foodsJson);
-  console.log("foods", foods);
+  // console.log("foods", foods);
 
   // Delete Food
   const deleteFood = (foodId) => {
@@ -27,8 +29,7 @@ function FoodList() {
   return (
     <div>
       <AddFoodForm addNewFood={addNewFood} />
-      <hr />
-      <h1>Food List</h1>
+      <Divider>Food List</Divider>
       {foods.map((food, id) => (
         <FoodBox key={id} food={food} clickToDelete={deleteFood} />
       ))}
