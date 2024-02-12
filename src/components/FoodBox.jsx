@@ -1,7 +1,7 @@
 // Your code here
 import "./FoodBox.css";
 
-function FoodBox({ food }) {
+function FoodBox({ food, clickToDelete }) {
   console.log("one food", food);
   return (
     <div className="foodBox">
@@ -16,7 +16,7 @@ function FoodBox({ food }) {
         <b>Total Calories: {food.servings * food.calories} </b> kcal
       </p>
 
-      <button>Delete</button>
+      <button onClick={() => clickToDelete(food.id)}>Delete</button>
     </div>
   );
 }
