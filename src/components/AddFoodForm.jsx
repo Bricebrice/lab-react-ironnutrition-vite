@@ -38,7 +38,8 @@ function AddFoodForm(props) {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
+      {/* /!\/!\/!\ using "Form" instead of form drove me crazy! antd handles form submission its own way... /!\/!\/!\ */}
+      <form onSubmit={handleSubmit}>
         <Divider>Add Food Entry</Divider>
 
         <Form.Item label="Name">
@@ -80,7 +81,7 @@ function AddFoodForm(props) {
         <Button type="default" htmlType="submit">
           Create
         </Button>
-      </Form>
+      </form>
     </div>
   );
 }
