@@ -57,9 +57,13 @@ function FoodList() {
       <FilterFood filterFoodList={filterFoodList} />
       <AddFoodForm addNewFood={addNewFood} />
       <Divider>Food List</Divider>
-      {foods.map((food, id) => (
-        <FoodBox key={id} food={food} clickToDelete={deleteFood} />
-      ))}
+      {foods.length === 0 ? (
+        <p>Oops! There is no more content to show.</p>
+      ) : (
+        foods.map((food, id) => (
+          <FoodBox key={id} food={food} clickToDelete={deleteFood} />
+        ))
+      )}
     </div>
   );
 }
